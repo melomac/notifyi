@@ -5,4 +5,6 @@
 - (void)start;
 - (void)stop;
 
+- (void)alert;
+
 @end

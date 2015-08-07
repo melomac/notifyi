@@ -30,6 +30,7 @@ int main(int argc, const char *argv[])
 		dispatch_resume(_termSource);
 		
 		[app start];
+//		[app alert];
 		
 		[[NSRunLoop mainRunLoop] run];
 	}
