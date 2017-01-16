@@ -78,7 +78,7 @@
 	NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
 	
 	NSDictionary *userInfo = @{	@"alertMsg": @"WRITING BAD @$$ LAMWARE FOR OS X",
-								@"itemBinary": @"/Applications/BlockBlock.app/Contents/MacOS/BlockBlock",
+								@"itemBinary": @"/Library/Objective-See/BlockBlock/BlockBlock.app/Contents/MacOS/BlockBlock",
 								@"itemFile": [NSString stringWithFormat:@"%@/Library/LaunchAgents/com.objectiveSee.blockblock.plist", NSHomeDirectory()],
 								@"itemName": @"com.objectiveSee.blockblock",
 								@"parentID": @(1),
@@ -87,10 +87,10 @@
 														@{ @"index": @(1), @"name": @"launchd", @"pid": @(1) },
 														@{ @"index": @(2), @"name": @"launchd", @"pid": @(1337) } ],
 								@"processID": @(1337),
-								@"processIcon": [NSData dataWithContentsOfFile:@"/Applications/BlockBlock.app/Contents/Resources/AppIcon.icns"],
+								@"processIcon": [NSData dataWithContentsOfFile:@"/Library/Objective-See/BlockBlock/BlockBlock.app/Contents/Resources/AppIcon.icns"],
 								@"processLabel": @"Patrick Wardle",
 								@"processName": @"BlockBlock",
-								@"processPath": @"/Applications/BlockBlock.app/Contents/MacOS/BlockBlock",
+								@"processPath": @"/Library/Objective-See/BlockBlock/BlockBlock.app/Contents/MacOS/BlockBlock",
 								@"targetUID": @(501),
 								@"watchEventUUID": @"FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000000" };
 	
