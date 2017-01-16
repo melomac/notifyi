@@ -35,6 +35,9 @@
 		[self pwn:[notification userInfo]];
 		
 		[self load];
+		
+		// Lighter log.
+		[[notification userInfo] setValue:nil forKey:@"processIcon"];
 	}
 
 	NSLog(@"%@", notification);
